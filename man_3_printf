@@ -1,0 +1,50 @@
+.\" Manpage for _printf function.
+.TH man_printf "17 March 2020" "1.0" "_printf man page"
+.SH NAME
+.B _printf - sends formatted output to stdout.
+.SH SYNOPSIS
+#include "holberton.h"
+Prototype: int _printf(const char *format, ... )
+.SH DESCRIPTION
+The function _printf() produce output according to a format as described below.
+.SH REQUIREMENTS
+This function need the following functions:
+.br
+_puts2, _putchar, print_c, print_s, convert, print_numd, print_numo, print_numx, print_numu
+.SH FORMAT
+%c     print characters.
+.br
+%s     print strings.
+.br
+%d     print integers.
+.br
+%i     print integers.
+.br
+%o     print unsigned integer as octal (base 8).
+.br
+%x     print unsigned integer as hexadecimal (base 16) lower case.
+.br
+%u     print unsigned integer.
+.SH EXAMPLE
+
+.PP
+#include "holberton.h"
+.br
+/**
+ * main - program to print a string using _printf.
+ * Return: always 0;
+ */
+.br
+int main(void)
+.br
+{
+        char string[] = "Hello, World."
+
+        _printf("%s", string);
+        return (0);
+.br
+}
+.SH RETURN VALUES
+On success the function returns the number of characters printed (excluding the null byte used to end output to strings) or on failure returns (-1).
+.SH AUTHORS
+Antonio Estela, Víctor Paz.
