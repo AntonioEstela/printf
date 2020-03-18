@@ -18,50 +18,50 @@ int _printf(const char *format, ...)
 	for (; format[i] != '%' && format[i] != '\0'; i++, j++)
 	{
 		_putchar(format[i]);
-	}
+	}	
+	switch (format[i + 1])
+	{
+		case 'c':
+			i++;
+			j += print_c(arg);
+			i++;
+			break;
+		case 's':
+			i++;
+			j += print_s(arg);
+			i++;
+			break;
+		case 'd':
+			i++;
+			j += print_numd(arg);
+			i++;
+			break;
+		case 'i':
+			i++;
+			j += print_numd(arg);
+			i++;
+			break;
+		case 'o':
+			i++;
+			j += print_numo(arg);
+			i++;
+			break;
+		case 'x':
+			i++;
+			j += print_numx(arg);
+			i++;
+			break;
+		case 'u':
+			i++;
+			j += print_numu(arg);
+			i++;
+			break;
+		default:
+			break;
+		i++;
+		}
 	while (format[i] != '\0')
 	{
-		switch (format[i + 1])
-		{
-				case 'c':
-					i++;
-					j += print_c(arg);
-					i++;
-					break;
-				case 's':
-					i++;
-					j += print_s(arg);
-					i++;
-					break;
-				case 'd':
-					i++;
-					j += print_numd(arg);
-					i++;
-					break;
-				case 'i':
-					i++;
-					j += print_numd(arg);
-					i++;
-					break;
-				case 'o':
-					i++;
-					j += print_numo(arg);
-					i++;
-					break;
-				case 'x':
-					i++;
-					j += print_numx(arg);
-					i++;
-					break;
-				case 'u':
-					i++;
-					j += print_numu(arg);
-					i++;
-					break;
-				default:
-					break;
-			i++;
-		}
 		_putchar(format[i]);
 		j++;
 		i++;

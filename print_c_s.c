@@ -11,7 +11,7 @@ int print_c(va_list list)
 
 	/*  i = write(1, &s, 1); */
 	_putchar(s + i);
-	return (i);
+	return (1);
 }
 /**
  * print_s - function that print a string.
@@ -23,13 +23,13 @@ int print_s(va_list list)
 	char *str = va_arg(list, char *);
 	int i = 0;
 
-	if (str == NULL)
+	if (str == '\0')
 	{
-		str = "NULL";
+		str = '\0';
 	}
-	while (*(str + i))
+	while (str[i])
 	{
-		_putchar(*(str + i));
+		_putchar(str[i]);
 		i++;
 	}
 	return (i);
